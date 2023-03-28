@@ -23,7 +23,7 @@ data.push({
   email: "syeddilawar4444@gmail.com",
 });
 
-//number means function return type
+                                          //number means function return type
 const add = function (val1: number, val2: number): number {
   return val1 + val2;
 };
