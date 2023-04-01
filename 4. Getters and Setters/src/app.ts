@@ -10,10 +10,11 @@ class Product {
     private _price: number
   ) {}
 
-  get id(): number {
-    return this._id;
-  }
-
+  /* getter syntex " get name(){
+     return this.value
+   }"*/
+  // getter means get the value.
+  // getter required the return
   get name(): string {
     return this._name;
   }
@@ -27,18 +28,35 @@ class Product {
     this._name = newname;
   }
 
-  /* getter syntex " get name(){
-     return this.value
-   }"*/
-  // getter means get the value.
-  // getter required the return
+  get id(): number {
+    return this._id;
+  }
+
   get price(): number {
     return this._price;
   }
 }
 
 const product1 = new Product(1, "keyboard", 450);
-
 product1.name = "Lighting keyboard";
 
 console.log(product1);
+
+// extends before child class to after class
+// extends means all quality inheritance to child
+class ClothingProduct extends Product {
+  constructor(
+    id: number,
+    name: string,
+    price: number,
+    private _color: string,
+    private _size: "S" | "M" | "L" | "XL"
+  ) {
+    // super means to call the Class "Product" constructor()
+    super(id, name, price);
+  }
+}
+const tShirt = new ClothingProduct(2, "Black T-Shirt", 850, "black", "M");
+console.log(tShirt);
+
+// absraction
