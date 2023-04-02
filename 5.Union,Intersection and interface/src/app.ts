@@ -1,5 +1,5 @@
 // class 5
-// Union Types intersection Types
+// Union Types intersection Types Interfaces
 
 type Animal = {
   name: string;
@@ -39,11 +39,50 @@ interface Birds {
   flyingSpeed: number;
 }
 
+// type InCreature = Animals | Birds; //Union Interface
+//
 interface InCreature extends Animals, Birds {} //intersection Interface
-// interface Nothing extends Animals, Birds {}
-
 const flyRun: InCreature = {
   name: "something",
-  runningSpeed: 20,
   flyingSpeed: 20,
+  runningSpeed: 200,
 };
+
+// Example to use interface in classes
+interface ExampleClasses {
+  name: string;
+  height: number;
+  eat(food: string): string;
+}
+//interface apply in class use inplements
+class Human implements ExampleClasses {
+  constructor(public name: string, public height: number) {}
+  eat(food: string) {
+    return "eating food";
+  }
+}
+
+// TYPES GUARDS
+
+const arrow = (species: Creature): Creature => {
+  if (!("flyingSpeed" in species)) {
+    console.log(species.runningSpeed);
+    return species;
+  } else {
+    console.log(species.flyingSpeed);
+    return species;
+  }
+};
+
+const Eagle: Creature = {
+  name: "Eagle",
+  flyingSpeed: 300,
+};
+const lion: Creature = {
+  name: "lion",
+  runningSpeed: 200,
+};
+
+const ret = arrow(lion);
+
+console.log(ret);
