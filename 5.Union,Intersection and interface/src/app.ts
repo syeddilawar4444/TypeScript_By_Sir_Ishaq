@@ -36,12 +36,14 @@ interface Animals {
 
 interface Birds {
   name: string;
-  runningSpeed: number;
+  flyingSpeed: number;
 }
 
-interface Inter extends Animals, Birds {} //intersection Interface
+interface InCreature extends Animals, Birds {} //intersection Interface
+// interface Nothing extends Animals, Birds {}
 
-const flyRun: Inter = {
+const flyRun: InCreature = {
   name: "something",
   runningSpeed: 20,
+  flyingSpeed: 20,
 };
