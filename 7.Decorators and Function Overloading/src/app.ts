@@ -1,4 +1,4 @@
-// class 6
+// class 7
 // DECORATORS
 // hamesha class ka sath use ho tha ha decorators helper funcation ha
 // decorators naming convention capitalize first letter
